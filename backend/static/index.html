@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="color-scheme" content="light" />
+        
+        <title>Lunch This Week</title>
+
+        <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+        <script src="/js/init.js"></script>
+        <link rel="stylesheet" href="/css/custom.css" />
+
+    </head>
+    <body x-data="init()" x-init="loadToday" >
+        <p x-show="loading">LOADING...</p>
+        <table x-show="!loading">
+            <thead>
+                <tr>
+                    <th colspan="6"><h3 @click="adjustDate">For Week of <span x-text="forWeek"></span></h3></th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template x-for="section in menu">
+                    <tr>
+                        <th x-text="section.key"></th>
+                        <template x-for="dow in section.dow">
+                            <td>
+                                <ul>
+                                    <template x-for="item in dow">
+                                        <li x-text="item.name"></li>
+                                    </template>
+                                </ul>
+                            </td>
+                        </template>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </body>
+</html>
