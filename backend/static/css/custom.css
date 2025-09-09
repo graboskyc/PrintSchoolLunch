@@ -1,3 +1,32 @@
 table, th, td {
-border: 1px solid black;
+    border: 1px solid black;
+}
+
+th {
+    background-color: lightgray;
+    text-align: center;
+}
+
+.row-title {
+    min-height: 3rem;
+}
+
+.loading-parent .loading-child {
+    display: grid;
+    place-items: center;
+}
+
+.loading-child {
+    margin-top:45vh;
+}
+
+.loading-child img {
+    width: 200px;
+    height: 200px;
+}
+
+.rotated-text {
+    writing-mode: vertical-rl;
+    white-space:nowrap;
+    transform:scale(-1);
 }

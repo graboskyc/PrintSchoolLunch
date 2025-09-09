@@ -15,11 +15,22 @@
 
     </head>
     <body x-data="init()" x-init="loadToday" >
-        <p x-show="loading">LOADING...</p>
+        <div x-show="loading" class="loading-parent">
+            <div class="loading-child">
+                <img src="img/loading.gif" />
+                <p>Loading...</p>
+            </div>
+        </div>
         <table x-show="!loading">
             <thead>
                 <tr>
-                    <th colspan="6"><h3 @click="adjustDate">For Week of <span x-text="forWeek"></span></h3></th>
+                    <th colspan="6">
+                        <h1>
+                            <span class="material-symbols-outlined" @click="adjustDate('back')">chevron_backward</span>
+                            <span>For Week of <span x-text="forWeek"></span></span>
+                            <span class="material-symbols-outlined" @click="adjustDate('forward')">chevron_forward</span>
+                        </h1>
+                    </th>
                 </tr>
                 <tr>
                     <th></th>
@@ -33,7 +44,9 @@
             <tbody>
                 <template x-for="section in menu">
                     <tr>
-                        <th x-text="section.key"></th>
+                        <th class="row-title">
+                            <div x-text="section.key" class="rotated-text"></div>
+                        </th>
                         <template x-for="dow in section.dow">
                             <td>
                                 <ul>

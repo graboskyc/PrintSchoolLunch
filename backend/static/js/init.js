@@ -13,11 +13,15 @@ function init() {
             this.loading = false;
         },
 
-        async adjustDate() {
+        async adjustDate(dir) {
             // add a week to current forWeek
             const parts = this.forWeek.split('/');
             const date = new Date(parts[2], parts[0] - 1, parts[1]);
-            date.setDate(date.getDate() + 7);
+            if (dir === 'back') {
+                date.setDate(date.getDate() - 7);
+            } else {
+                date.setDate(date.getDate() + 7);
+            }
             const mm = String(date.getMonth() + 1).padStart(2, '0');
             const dd = String(date.getDate()).padStart(2, '0');
             const yyyy = date.getFullYear();
