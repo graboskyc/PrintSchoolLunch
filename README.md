@@ -10,4 +10,4 @@ This probably won't be useful for anyone else in the world unless you, too, use 
 
 Built on HTML, FastAPI, AlpineJS
 
-![](ss/ss01.jpg)
+![](ss/ss01.gif)
