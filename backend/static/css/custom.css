@@ -17,7 +17,7 @@ th {
 }
 
 .loading-child {
-    margin-top:45vh;
+    margin-top:25vh;
 }
 
 .loading-child img {
@@ -29,4 +29,17 @@ th {
     writing-mode: vertical-rl;
     white-space:nowrap;
     transform:scale(-1);
+}
+
+@keyframes moveUp {
+    0% {
+    transform: translateY(0) translateX(0);
+    }
+    100% {
+    transform: translateY(-50px) translateX(10%);
+    }
+}
+
+svg #slice-group {
+    animation: moveUp 1s infinite alternate;
 }

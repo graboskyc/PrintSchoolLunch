@@ -22,7 +22,47 @@
     <body x-data="init()" x-init="loadToday" >
         <div x-show="loading" class="loading-parent">
             <div class="loading-child">
-                <img src="img/loading.gif" />
+                <svg width="600" height="600" viewBox="0 0 300 300">
+                    <!-- Pizza base -->
+                    <circle cx="150" cy="150" r="100" fill="#f4e2b3" stroke="#d4a04a" stroke-width="8"/>
+                    <!-- Pizza sauce -->
+                    <circle cx="150" cy="150" r="85" fill="#e85c3c"/>
+                    <!-- Cheese -->
+                    <circle cx="150" cy="150" r="75" fill="#ffe066"/>
+
+                    <g id="slice-hide-group">
+                        <!-- Slice outline (removed) -->
+                        <path id="slice-outline" d="M150,150 L150,50 A100,100 0 0,1 230,80 Z" fill="#ffffff" stroke="#ffffff" stroke-width="8"/>
+                        <!-- Slice sauce -->
+                        <path id="slice-sauce" d="M150,150 L150,65 A85,85 0 0,1 217,90 Z" fill="#ffffff"/>
+                        <!-- Slice cheese -->
+                        <path id="slice-cheese" d="M150,150 L150,75 A75,75 0 0,1 210,95 Z" fill="#ffffff"/>
+                        <!-- Slice shadow (to show it's removed) -->
+                        <path id="slice-shadow" d="M150,150 L230,80 A100,100 0 0,0 150,50 Z" fill="#ffffff" opacity="0.3"/>
+                    </g>
+                    <g id="slice-group">
+                        <!-- Slice outline (removed) -->
+                        <path id="slice-outline" d="M150,150 L150,50 A100,100 0 0,1 230,80 Z" fill="#f4e2b3" stroke="#d4a04a" stroke-width="8"/>
+                        <!-- Slice sauce -->
+                        <path id="slice-sauce" d="M150,150 L150,65 A85,85 0 0,1 217,90 Z" fill="#e85c3c"/>
+                        <!-- Slice cheese -->
+                        <path id="slice-cheese" d="M150,150 L150,75 A75,75 0 0,1 210,95 Z" fill="#ffe066"/>
+                        <!-- Slice shadow (to show it's removed) -->
+                        <path id="slice-shadow" d="M150,150 L230,80 A100,100 0 0,0 150,50 Z" fill="#bfa76a" opacity="0.3"/>
+                        <!-- Toppings on slice -->
+                        <circle cx="170" cy="100" r="8" fill="#a83232"/>
+                        <circle cx="180" cy="110" r="8" fill="#a83232"/>
+                    </g>
+                    <!-- Toppings on pizza -->
+                    <circle cx="120" cy="120" r="8" fill="#a83232"/>
+                    <circle cx="120" cy="140" r="8" fill="#a83232"/>
+                    <circle cx="200" cy="130" r="8" fill="#a83232"/>
+                    <circle cx="160" cy="180" r="8" fill="#a83232"/>
+                    <circle cx="140" cy="195" r="8" fill="#a83232"/>
+                    <circle cx="200" cy="160" r="8" fill="#a83232"/>
+                    <circle cx="110" cy="170" r="8" fill="#a83232"/>
+
+                    </svg>
                 <p>Loading...</p>
             </div>
         </div>
