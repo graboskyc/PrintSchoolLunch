@@ -10,4 +10,14 @@ This probably won't be useful for anyone else in the world unless you, too, use 
 
 Built on HTML, FastAPI, AlpineJS
 
+## Running
+* Copy `sample.env `to `.env`
+* Edit the URL to point to the correct ID. This can be found by:
+   * visiting the normal Sage Dining site
+   * opening the Chrome Inspector panel and go to Network tab
+   * Navigate to the weekly menu and note the network URL that is pulled that matches the format in sample.env
+   * Put it in `.env`
+* Run `./build.sh` or run the Docker commands found in that shell script
+* Note that the URL seems to change seasonally
+
 ![](ss/ss01.gif)
